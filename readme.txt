@@ -6,4 +6,4 @@ Project MERN ini dibuat bersama Build With Angga dengan judul kelas, Full Stak J
 MERN dibuat dengan bahasa pemrogramman Javascript dengan beberapa Framework yakni:
 1. Vue JS
 2. React JS
-3. 
+3. g
