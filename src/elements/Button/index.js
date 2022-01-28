@@ -81,3 +81,13 @@ Button.propTypes = {
   isExternal: propTypes.bool,
   hasShadow: propTypes.bool,
 };
+
+{
+  /* <button
+      clasName={className.join(' ')}
+      style={props.style}
+      onClick={onClick}
+    >
+      {props.children}
+    </button> */
+}
