@@ -10,7 +10,7 @@ export default function Button(props) {
   if (props.isBlock) className.push('btn-block');
   if (props.hasShadow) className.push('btn-shadow');
 
-  const onclick = () => {
+  const onClick = () => {
     if (props.onClick) props.onClick();
   };
 
@@ -69,7 +69,7 @@ export default function Button(props) {
 
 Button.propTypes = {
   type: propTypes.onOf(['button', 'link']),
-  onclick: propTypes.func,
+  onClick: propTypes.func,
   href: propTypes.string,
   target: propTypes.string,
   className: propTypes.string,
@@ -81,14 +81,3 @@ Button.propTypes = {
   isExternal: propTypes.bool,
   hasShadow: propTypes.bool,
 };
-
-{
-  /* <button
-      clasName={className.join(' ')}
-      style={props.style}
-      onClick={onClick}
-    >
-      {props.children}
-    </button> */
-  // Ramadhan Boedi Antoro
-}
