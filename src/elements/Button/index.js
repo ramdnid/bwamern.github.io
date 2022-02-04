@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 
 export default function Button(props) {
-  const className = [props.clasName];
+  const className = [props.className];
   if (props.isPrimary) className.push('btn-primary');
   if (props.isLarge) className.push('btn-lg');
   if (props.isSmall) className.push('btn-sm');
@@ -17,11 +17,11 @@ export default function Button(props) {
   if (props.isDisabled || props.isLoading) {
     if (props.isDisabled) className.push('disabled');
     return (
-      <span clasName={className.join(' ')} style={props.style}>
+      <span className={className.join(' ')} style={props.style}>
         {props.isLoading ? (
           <>
-            <span className='spinner-border spinner-border-sm mx-5'></span>
-            <span clasName='sr-only'>Loading..</span>
+            <span className='spinner-border spinner-border-sm mx-5'> </span>
+            <span className='sr-only'> Loading.. </span>
           </>
         ) : (
           props.children
@@ -35,7 +35,7 @@ export default function Button(props) {
       return (
         <a
           href={props.href}
-          clasName={className.join(' ')}
+          className={className.join(' ')}
           style={props.style}
           target={props.target === '_blank' ? '_blank' : undefined}
           rel={props.target === '_blank' ? 'noopener noreferrer' : undefined}
@@ -46,8 +46,8 @@ export default function Button(props) {
     } else {
       return (
         <link
-          href={props.href}
-          clasName={className.join(' ')}
+          to={props.href}
+          className={className.join(' ')}
           style={props.style}
           onClick={onClick}
         >
@@ -58,7 +58,7 @@ export default function Button(props) {
   }
   return (
     <button
-      clasName={className.join(' ')}
+      className={className.join(' ')}
       style={props.style}
       onClick={onClick}
     >
@@ -68,11 +68,12 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-  type: propTypes.onOf(['button', 'link']),
+  type: propTypes.oneOf(['button', 'link']),
   onClick: propTypes.func,
   href: propTypes.string,
   target: propTypes.string,
   className: propTypes.string,
+  isExternal: propTypes.bool,
   isDisabled: propTypes.bool,
   isLoading: propTypes.bool,
   isSmall: propTypes.bool,
@@ -81,3 +82,5 @@ Button.propTypes = {
   isExternal: propTypes.bool,
   hasShadow: propTypes.bool,
 };
+
+// Success edit npm test
