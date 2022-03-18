@@ -18,14 +18,15 @@ export default function Button(props) {
     if (props.isDisabled) className.push('disabled');
     return (
       <span className={className.join(' ')} style={props.style}>
+        {' '}
         {props.isLoading ? (
           <>
-            <span className='spinner-border spinner-border-sm mx-5'> </span>
-            <span className='sr-only'> Loading.. </span>
+            <span className='spinner-border spinner-border-sm mx-5'> </span>{' '}
+            <span className='sr-only'> Loading.. </span>{' '}
           </>
         ) : (
           props.children
-        )}
+        )}{' '}
       </span>
     );
   }
@@ -40,19 +41,19 @@ export default function Button(props) {
           target={props.target === '_blank' ? '_blank' : undefined}
           rel={props.target === '_blank' ? 'noopener noreferrer' : undefined}
         >
-          {props.children}
+          {props.children}{' '}
         </a>
       );
     } else {
       return (
-        <link
+        <Link
           to={props.href}
           className={className.join(' ')}
           style={props.style}
           onClick={onClick}
         >
-          {props.children}
-        </link>
+          {props.children}{' '}
+        </Link>
       );
     }
   }
@@ -62,7 +63,7 @@ export default function Button(props) {
       style={props.style}
       onClick={onClick}
     >
-      {props.children}
+      {props.children}{' '}
     </button>
   );
 }
@@ -73,14 +74,12 @@ Button.propTypes = {
   href: propTypes.string,
   target: propTypes.string,
   className: propTypes.string,
+  isPrimary: propTypes.bool,
   isExternal: propTypes.bool,
   isDisabled: propTypes.bool,
   isLoading: propTypes.bool,
   isSmall: propTypes.bool,
   isLarge: propTypes.bool,
   isBlock: propTypes.bool,
-  isExternal: propTypes.bool,
   hasShadow: propTypes.bool,
 };
-
-// Success edit npm test
